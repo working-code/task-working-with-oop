@@ -4,8 +4,8 @@ namespace CarSharing\Service;
 
 trait GpsTrait
 {
-    public function getPrice()
+    public function getPrice($countMinute)
     {
-        return $this->roundingMinute($this->countMinute) * self::PRICE_MINUTE;
+        return $this->roundingMinute($countMinute) * self::PRICE_MINUTE;
     }
 }

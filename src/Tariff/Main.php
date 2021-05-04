@@ -2,6 +2,8 @@
 
 namespace CarSharing\Tariff;
 
+use CarSharing\Service\Service;
+
 abstract class Main implements Cost
 {
     const PRICE_KM = 0;
@@ -11,7 +13,7 @@ abstract class Main implements Cost
     protected $countMinute;
     protected $services = [];
 
-    public function addService(\CarSharing\Service\Service $service)
+    public function addService(Service $service)
     {
         $this->services[] = $service;
     }
@@ -30,8 +32,7 @@ abstract class Main implements Cost
     {
         $priceServices = 0;
         foreach ($this->services as $value) {
-            $value->setCountMinute($this->countMinute);
-            $priceServices += $value->getPrice();
+            $priceServices += $value->getPrice($this->countMinute);
         }
         return  $priceServices;
     }

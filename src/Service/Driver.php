@@ -8,11 +8,4 @@ class Driver implements Service
 
     const PRICE_MINUTE = 0;
     const PRICE_SERVICE = 100;
-
-    protected $countMinute;
-
-    public function setCountMinute($countMinute)
-    {
-        $this->countMinute = $countMinute;
-    }
 }

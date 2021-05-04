@@ -4,8 +4,8 @@ namespace CarSharing\Service;
 
 trait DriverTrait
 {
-    public function getPrice()
+    public function getPrice($countMinute)
     {
-        return self::PRICE_SERVICE + self::PRICE_MINUTE * $this->countMinute;
+        return self::PRICE_SERVICE + self::PRICE_MINUTE;
     }
 }

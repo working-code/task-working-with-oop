@@ -9,13 +9,6 @@ class Gps implements Service
     const PRICE_MINUTE = 15 / 60;
     const MIN_COUNT_MINUTES = 60;
 
-    protected $countMinute;
-
-    public function setCountMinute($countMinute)
-    {
-        $this->countMinute = $countMinute;
-    }
-
     private function roundingMinute($countMinute)
     {
         return ceil($countMinute / self::MIN_COUNT_MINUTES) * self::MIN_COUNT_MINUTES;
